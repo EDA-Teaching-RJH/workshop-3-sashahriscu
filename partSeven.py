@@ -1,31 +1,34 @@
 def main():
-    num1 = int(input("Input first number: "))
-    num2 = int(input("Input second number: "))
-    operation = input("Pick operation: (+, -, /, *, ^, or %), type 'quit' to cancel operation. ")
-    
-    if operation.lower()=="quit":
-        print("Cancelling operation.")
-    break # ??????? outside loop ????????
+    while True:
+        num1 = int(input("Input first number: "))
+        num2 = int(input("Input second number: "))
+        operation = input("Pick operation: (+, -, /, *, ^, or %), type 'quit' to cancel operation. ")
 
-#??????????????
-    match case:
+        if operation.lower()=="quit":
+            print("Cancelling operation.")
+    break 
+
+# ????????
+
+    else:
+        match operation:
             case "+":
                 result = (num1 + num2)
-                print(f"{num1}+{num2} = {result}")
+                print(f"{num1} + {num2} = {result}")
             case "-":
                 result = (num1 - num2)
-                print(f"{num1}-{num2} = {result}")
+                print(f"{num1} - {num2} = {result}")
             case "/":
                 if num2==0:
                     return("Error! Cannot divide by 0.")
                 else:
                     result = (num1 / num2)
-                    print(f"{num1}/{num2} = {result}")
+                    print(f"{num1} / {num2} = {result}")
             case "*":
                 result = (num1 * num2)
-                print(f"{num1}*{num2} = {result}")
+                print(f"{num1} * {num2} = {result}")
             case "^":
-                result = (num1 ^ num2)
+                result = (num1 ** num2)
                 print(f"{num1} ^ {num2} = {result}")
             case "%":
                 if num2==0:
@@ -33,6 +36,8 @@ def main():
                 else:
                     result = (num1 % num2)
                     print(f"{num1} % {num2} = {result}")
+            case _:
+                print("Invalid")
                     
 main()
             
